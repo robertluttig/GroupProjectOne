@@ -24,10 +24,15 @@ function renderTopCharts(countryCode) {
         newDiv.html(`
           <div class='videoListItem' videoId=${response.items[i].id}> 
             <div>${response.items[i].snippet.title}</div>
-            
             <img src=${response.items[i].snippet.thumbnails.default.url} />
           </div>
         `);
+        $("iframe").attr("src", `https://www.youtube.com/embed/${videoId}`);
+            var descripDiv = $("<div>");
+            descripDiv.text(vidDescription);
+            console.log(vidDescription);
+            console.log(descripDiv);
+            $(".iframe").append(descripDiv)
         $("#videoList").append(newDiv);
       }
     });
