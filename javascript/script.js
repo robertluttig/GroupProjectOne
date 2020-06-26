@@ -4,8 +4,7 @@ function handleCountryChange(lat, lng) {
     url: `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=f3d378ee02e1426d89edc3bae843d163`,
     method: "GET",
   }).then(function (response) {
-    var countryCode =
-      response.results[0].components["ISO_3166-1_alpha-2"];
+    var countryCode = response.results[0].components["ISO_3166-1_alpha-2"];
     renderTopCharts(countryCode);
   });
   //YOUTUBE TOP CHARTS FUNCTION
@@ -20,22 +19,29 @@ function handleCountryChange(lat, lng) {
       for (var i = 0; i < response.items.length; i++) {
         var newDiv = $("<div>");
         newDiv.html(`
-        <div class=videoListItem videoId=${response.items[i].id} videoDescription=${response.items[i].snippet.description}>
+        <div class=videoListItem data-videoId=${response.items[i].id} data-videoDescription="${response.items[i].snippet.description}">
           <div>${response.items[i].snippet.title}</div>
           <img src=${response.items[i].snippet.thumbnails.default.url} />
         </div>
       `);
-        $('#videoList').append(newDiv);
-      };
-      $('.videoListItem').click(function () {
-        var selectedVideoId = $(this).attr('videoId');
-        var selectedVideoDescription = $(this).attr('videoDescription');
-        $('iframe').attr('src', `https://www.youtube.com/embed/${selectedVideoId}`);
+        $("#videoList").append(newDiv);
+      }
+      var scroll = document.querySelector("#videoList:last-child");
+      setTimeout(function () {
+        scroll.scrollIntoView({ behavior: "smooth" });
+      }, 250);
+      $(".videoListItem").click(function () {
+        var selectedVideoId = $(this).attr("data-videoId");
+        var selectedVideoDescription = $(this).attr("data-videoDescription");
+        $("iframe").attr(
+          "src",
+          `https://www.youtube.com/embed/${selectedVideoId}`
+        );
         $("#videoDescription").text(selectedVideoDescription);
       });
-    })
-  };
-};
+    });
+  }
+}
 
 //INIT MAP FUNCTION
 function initMap() {
