@@ -5,10 +5,15 @@ function handleCountryChange(lat, lng) {
     method: "GET",
   }).then(function (response) {
     var countryCode = response.results[0].components["ISO_3166-1_alpha-2"];
+    var countryName = response.results[0].components.country;
+    var countryFlag = response.results[0].annotations.flag;
+    $("#country").text(`${countryFlag} ${countryName}`);
     renderTopCharts(countryCode);
   });
   //YOUTUBE TOP CHARTS FUNCTION
   function renderTopCharts(countryCode) {
+    $("#country").removeClass("hide");
+    $(".fluid").removeClass("hide");
     $("iframe").css("display", "block");
     $("#map").css("height", "50%");
     $.ajax({
