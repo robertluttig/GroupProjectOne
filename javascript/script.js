@@ -1,7 +1,7 @@
 //FUNCTION COUNTRY CHANGE
 function handleCountryChange(lat, lng) {
     $.ajax({
-      url: `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=AIzaSyCRwKFOIGwE09uqNuhJJUoOg5Oxa9jbB1M`,
+      url: `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=f3d378ee02e1426d89edc3bae843d163`,
       method: "GET",
     }).then(function (response) {
       var countryCode =
