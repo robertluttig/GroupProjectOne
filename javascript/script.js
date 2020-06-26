@@ -36,6 +36,7 @@ function handleCountryChange(lat, lng) {
     })
   };
 };
+
 //INIT MAP FUNCTION
 function initMap() {
   //Sets initial coord
