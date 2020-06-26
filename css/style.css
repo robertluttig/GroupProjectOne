@@ -1,7 +1,9 @@
+
 .top-bar {
     background-image: url("../Assets/photo-1451187580459-43490279c0fa.jpg");
-    background-color: #cccccc;
+    background-color: #333333;
     background-size: cover;
+    height: 50px;
    }
 
 .top-bar-title {
@@ -10,20 +12,50 @@
        font-weight: bold;
    }
 
+   .row1{
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    height: 125px;
+    margin-top: 0px;
+    left: 50%;
+    background-color: black;
+
+   }
 
    .row-full{
     width: 100vw;
     position: relative;
     margin-left: -50vw;
     height: 500px;
-    margin-top: 100px;
+    margin-top: 0px;
     left: 50%;
+
    }
 
    .search-results{
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    height: 125px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: 50%;
+    background-color: black;
     font-family: 'Julius Sans One', sans-serif;
+    color: aliceblue;
     font-weight: bolder;
 
+   }
+
+   footer{
+    background-color: black;
+    margin: 0px;
+    color: aliceblue;
+   }
+
+   footer p{
+     margin-bottom: 0px;
    }
 
   .text-center{
