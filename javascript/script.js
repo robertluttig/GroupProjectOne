@@ -12,6 +12,8 @@ function handleCountryChange(lat, lng) {
   });
   //YOUTUBE TOP CHARTS FUNCTION
   function renderTopCharts(countryCode) {
+    $("#country").removeClass("hide");
+    $(".fluid").removeClass("hide");
     $("iframe").css("display", "block");
     $("#map").css("height", "50%");
     $.ajax({

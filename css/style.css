@@ -1,9 +1,9 @@
 
 .top-bar {
-    background-image: url("../Assets/photo-1451187580459-43490279c0fa.jpg");
+    background-image: url("../Assets/earthNew-2.jpg");
     background-color: #333333;
     background-size: cover;
-    height: 50px;
+    height: 75px;
    }
 
 .top-bar-title {
@@ -20,6 +20,10 @@
     margin-top: 0px;
     left: 50%;
     background-color: black;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
 
    }
 
@@ -33,7 +37,7 @@
 
    }
 
-   .search-results{
+   #country{
     width: 100vw;
     position: relative;
     margin-left: -50vw;
@@ -47,6 +51,18 @@
     font-weight: bolder;
 
    }
+
+   .grid-container{
+    background-color: black;
+    color: aliceblue;
+    font-family: 'Julius Sans One', sans-serif;
+ }
+
+   .grid-container h1{
+     background-color: black;
+     color: aliceblue;
+     font-family: 'Julius Sans One', sans-serif;
+  }
 
    footer{
     background-color: black;
@@ -64,6 +80,5 @@
 
   }
 
- font-family: 'Poppins', sans-serif;
 
   
