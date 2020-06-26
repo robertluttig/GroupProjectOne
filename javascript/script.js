@@ -5,6 +5,9 @@ function handleCountryChange(lat, lng) {
     method: "GET",
   }).then(function (response) {
     var countryCode = response.results[0].components["ISO_3166-1_alpha-2"];
+    var countryName = response.results[0].components.country;
+    var countryFlag = response.results[0].annotations.flag;
+    $("#country").text(`${countryFlag} ${countryName}`);
     renderTopCharts(countryCode);
   });
   //YOUTUBE TOP CHARTS FUNCTION
