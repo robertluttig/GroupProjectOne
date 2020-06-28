@@ -18,32 +18,36 @@ function handleCountryChange(lat, lng) {
     $.ajax({
       url: `https://www.googleapis.com/youtube/v3/videos/?part=snippet&chart=mostPopular&regionCode=${countryCode}&key=AIzaSyDDelBzOnszcW3ayHmVNNZeaqbkBhdfz9U`,
       method: "GET",
-    }).then(function (response) {
-      $("#videoList").empty();
-      for (var i = 0; i < response.items.length; i++) {
-        var newDiv = $("<div>");
-        newDiv.html(`
+    })
+      .then(function (response) {
+        $("#videoList").empty();
+        for (var i = 0; i < response.items.length; i++) {
+          var newDiv = $("<div>");
+          newDiv.html(`
         <div class=videoListItem data-videoId=${response.items[i].id} data-videoDescription="${response.items[i].snippet.description}">
           <div>${response.items[i].snippet.title}</div>
           <img src=${response.items[i].snippet.thumbnails.default.url} />
         </div>
       `);
-        $("#videoList").append(newDiv);
-      }
-      var scroll = document.querySelector("#videoList:last-child");
-      setTimeout(function () {
-        scroll.scrollIntoView({ behavior: "smooth" });
-      }, 250);
-      $(".videoListItem").click(function () {
-        var selectedVideoId = $(this).attr("data-videoId");
-        var selectedVideoDescription = $(this).attr("data-videoDescription");
-        $("iframe").attr(
-          "src",
-          `https://www.youtube.com/embed/${selectedVideoId}`
-        );
-        $("#videoDescription").text(selectedVideoDescription);
+          $("#videoList").append(newDiv);
+        }
+        var scroll = document.querySelector("#videoList:last-child");
+        setTimeout(function () {
+          scroll.scrollIntoView({ behavior: "smooth" });
+        }, 250);
+        $(".videoListItem").click(function () {
+          var selectedVideoId = $(this).attr("data-videoId");
+          var selectedVideoDescription = $(this).attr("data-videoDescription");
+          $("iframe").attr(
+            "src",
+            `https://www.youtube.com/embed/${selectedVideoId}`
+          );
+          $("#videoDescription").text(selectedVideoDescription);
+        });
+      })
+      .catch(function (err) {
+        alert("Quota limit reached. Please try again later");
       });
-    });
   }
 }
 
