@@ -27,6 +27,11 @@
 
    }
 
+  .instructions{
+    padding-top: 8px;
+  }
+
+
    .row-full{
     width: 100vw;
     position: relative;
@@ -80,5 +85,10 @@
 
   }
 
+  .videoListItem:hover{ 
+    background-color: blue;
+  }
 
-  
+  .videoListItem {
+    cursor: grab;
+  }
