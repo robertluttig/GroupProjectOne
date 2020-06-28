@@ -16,7 +16,7 @@ function handleCountryChange(lat, lng) {
     $(".fluid").removeClass("hide");
     $("iframe").css("display", "block");
     $.ajax({
-      url: `https://www.googleapis.com/youtube/v3/videos/?part=snippet&chart=mostPopular&regionCode=${countryCode}&key=AIzaSyCCEa_pI9HJijLBIAoVxtRplDO1DM0MrQk`,
+      url: `https://www.googleapis.com/youtube/v3/videos/?part=snippet&chart=mostPopular&regionCode=${countryCode}&key=AIzaSyDDelBzOnszcW3ayHmVNNZeaqbkBhdfz9U`,
       method: "GET",
     }).then(function (response) {
       $("#videoList").empty();
