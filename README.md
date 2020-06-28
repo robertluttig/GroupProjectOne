@@ -7,5 +7,5 @@ Video world is an application that allows users to select a country via the Goog
 ### Link to deployed project on [Github](https://robertluttig.github.io/VideoWorld/)
 
 #### Screenshot of Video World
-![](assets/Video World.JPG)
+![](Assets/videoWorld.JPG)
 
